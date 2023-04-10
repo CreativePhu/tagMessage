@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    position: relative;
+}
+
+#buttons{
+    width: 400px;
+    height: 930px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* display: none; */
+}
+
+#buttonSuccess, #buttonError{
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+}
+
+#buttonSuccess:hover, #buttonError:hover{
+    opacity: 0.6;
+    font-weight: bold;
+}
+
+#buttonSuccess{
+    background-color: #2ecc71;
+}
+
+#buttonError{
+    background-color: #e74c3c;
+}
+
+#sumMessage{
+    position: absolute;
+    right: 35px;
+    top: 100px;
+}
+
+#message{
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 10px #bdc3c7;
+    margin-top: 15px;
+}
+
+.error{
+    border-left: 4px solid #e74c3c;
+}
+
+.success{
+    border-left: 4px solid #2ecc71;
+}
+
+.success #iconMessage{
+    color: #2ecc71;
+}
+
+.error #iconMessage{
+    color: #e74c3c;
+}
+
+#iconMessage{
+    padding: 25px;
+}
+
+#contentMessage{
+    min-width: 200px;
+}
+
+#title{
+    font-weight: bold;
+}
+
+#title, #textContent{
+    opacity: 0.8;
+}
+
+#textContent{
+    font-size: 14px;
+}
+
+#messageFooter{
+    padding: 25px;
+}
+
+#messageFooter:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+@keyframes dichChuyenMesasge {
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes hideMessage {
+    to{
+        opacity: 0;
+    }
+}
+
