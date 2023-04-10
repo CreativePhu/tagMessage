@@ -18,6 +18,20 @@ function start(){
         error: '<i class="gg-danger"></i>'
     }
 
+
+
+    function getParentElm(element){
+        if(element.getAttribute('id') === 'message'){
+            return element;
+        }else{
+            return getParentElm(element.parentElement)
+        }
+
+    }
+
+
+
+
     function addMessage(typeMessage){
         let sumMessage = document.querySelector("#sumMessage");
         let mes = document.createElement('div');
@@ -44,8 +58,21 @@ function start(){
             sumMessage.removeChild(mes)
         }, typeMessage.duration+1000);
 
+        let close = document.querySelectorAll("#messageFooter");
+
+        close.forEach(function(element){
+            element.onclick = function(e){
+                let parent = getParentElm(e.target)
+                parent.style.display = 'none'
+            }
+        })
 
     }
+
+
+
+
+
 
     function setOnClickBnt(){
         let buttonScusses = document.querySelector("#buttonSuccess");
@@ -59,6 +86,9 @@ function start(){
             addMessage(error)
         }
     }
+
+
+    
 
     setOnClickBnt();
 }
